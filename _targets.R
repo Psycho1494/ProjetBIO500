@@ -32,7 +32,7 @@ list(
    
   tar_target(
      donnee_oiseau ,
-     Lectures_donnees_m()
+     Lecture_donnees()
   ),
   tar_target(
     donnee_oiseau_n,
