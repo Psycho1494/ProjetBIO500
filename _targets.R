@@ -15,16 +15,18 @@ library(rmarkdown)
 library(tarchetypes)
 library(rticles)
 library(bib2df)
-source("fonction_combiner.r")
-source("fonction_date.r")
-source("fonction_na.r")
-source("fonction_lat.r")
-source("fonction_req_om.r")
-source("graph_obs_mois_annee.r")
-source("fonction_req_fm.R")
-source("graph_famille.r")
-source("fonction_obs_lat.r")
-source("graph_obs_lat.r")
+source("scripts/fonction_combiner.r")
+source("scripts/fonction_date.r")
+source("scripts/fonction_na.r")
+source("scripts/fonction_lat.r")
+source("scripts/tableSQL.r")
+source("scripts/fonction_req_om.r")
+source("scripts/graph_obs_mois_annee.r")
+source("scripts/fonction_req_fm.R")
+source("scripts/graph_famille.r")
+source("scripts/fonction_obs_lat.r")
+source("scripts/graph_obs_lat.r")
+
 
 # 2-Creation de la liste des targets (pipeline).
 
@@ -32,7 +34,7 @@ list(
    
   tar_target(
      donnee_oiseau ,
-     Lecture_donnees()
+     lecture_donnees()
   ),
   tar_target(
     donnee_oiseau_n,
@@ -47,8 +49,12 @@ list(
     verifier_limites_latitude(donnee_oiseau_date, "lat")
   ),
   tar_target(
+    creation_table_sql,
+    creationsql(donnee_oiseau_date)
+  ),
+  tar_target(
     observation_mois_annee,
-    obs_mois_annee(donnee_oiseau_date)
+    obs_mois_annee(creation_table_sql)
   ),
   tar_target(
     graph_mois_annee,
@@ -56,7 +62,7 @@ list(
   ),
   tar_target(
     observation_mois_famille,
-    obs_mois_famille(donnee_oiseau_date),
+    obs_mois_famille(creation_table_sql),
   ),
   tar_target(
     graph_famille,
@@ -64,7 +70,7 @@ list(
   ),
   tar_target(
     observation_lat,
-    obs_lat(donnee_oiseau_lat),
+    obs_lat(creation_table_sql),
   ),
   tar_target(
     graph_lat,
@@ -72,8 +78,7 @@ list(
   ),
   tar_render(
     rapport,
-    path="rapport.Rmd",
-    output_file = "rapport.pdf"
+    "article/rapport.Rmd",
+    output_file = "article/rapport.pdf"
   )
 )
-

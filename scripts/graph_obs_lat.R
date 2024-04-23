@@ -8,7 +8,7 @@
 # 1-Creation du graphique des observation d'oiseaux en fonction de la latitude.
 
 graph_obs_lat <-function(obs_lat) {
-  pdf(file="observation_lat.pdf")
+  pdf(file="figures/observation_lat.pdf")
   par(mar=c(5,5,5,5))
 
 plot(nb_obs~lat, data=obs_lat,xlab="Latitude",ylab="Nombre d'observations")

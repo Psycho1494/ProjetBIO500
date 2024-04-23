@@ -8,7 +8,7 @@
 # 1-Creation du graphique des obervations d'oiseaux en fonction du mois et des annees.
 
 graph_obs_mois_annee <-function(datecombine) {
-  pdf(file="observation_mois_annee.pdf")
+  pdf(file="figures/observation_mois_annee.pdf")
   par(mar=c(5,5,5,5))
 plot(datecombine$mois,datecombine$obs_2016, type = "l", col = "blue",ylim=c(0,6000),lwd = 2, xlab="Mois",ylab="Nombre d'observations")
 lines(datecombine$mois,datecombine$obs_2017,col="red",lwd = 2.5)

@@ -1,7 +1,7 @@
 ##Graphique observation du nombre de famille par mois par année
 
 graph_obs_mois_famille <-function(fammois) {
-  pdf(file="observation_mois_famille.pdf")
+  pdf(file="figures/observation_mois_famille.pdf")
   par(mar=c(5,5,5,5))
 barplot(
   t(as.matrix(fammois[, -1])),  # Transpose la matrice des données sauf la première colonne (mois)
