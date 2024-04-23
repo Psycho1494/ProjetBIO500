@@ -78,7 +78,7 @@ list(
   ),
   tar_render(
     rapport,
-    "article/rapport.Rmd",
-    output_file = "article/rapport.pdf"
+    path="article/rapport.Rmd",
+    output_file = "rapport.pdf"
   )
 )

@@ -12,7 +12,7 @@ creationsql <-function(donnee_oiseau) {
 
 #   Creation de la cle primaire qui va accueillir les informations sur les observations.
 
-dbSendQuery(connexion, "DROP TABLE observations;")
+dbSendQuery(connexion, "DROP TABLE IF EXISTS observations;")
 creer_observations<-
   "CREATE TABLE observations(
 id    INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,7 +22,7 @@ variable  VARCHAR(50)
 dbSendQuery(connexion, creer_observations)
 
 #   Creer une cle etrangere qui va accueillir les informations sur les sites.
-dbSendQuery(connexion, "DROP TABLE site;")
+dbSendQuery(connexion, "DROP TABLE IF EXISTS site;")
 creer_site<-
   "CREATE TABLE site(
 id_site    INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +33,7 @@ FOREIGN KEY(id_site)REFERENCES observations(id)
 dbSendQuery(connexion, creer_site)
 
 #   Creer une cle etrangere qui va accueillir les informations sur les especes d'oiseaux recensees.
-dbSendQuery(connexion, "DROP TABLE espece;")
+dbSendQuery(connexion, "DROP TABLE IF EXISTS espece;")
 creer_espece<-
   "CREATE TABLE espece(
 id_espece    INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,7 +46,7 @@ FOREIGN KEY(id_espece) REFERENCES observations(id)
 dbSendQuery(connexion, creer_espece)
 
 #   Creer une cle etrangere qui va accueillir les informations temporelles des observations.
-dbSendQuery(connexion, "DROP TABLE dob;")
+dbSendQuery(connexion, "DROP TABLE IF EXISTS dob;")
 creer_date_obs<-
   "CREATE TABLE dob(
 id_obs    INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,7 +59,7 @@ FOREIGN KEY(id_obs) REFERENCES observations(id)
 dbSendQuery(connexion, creer_date_obs)
 
 #   Creer une cle etrangere qui va accueillir les informations taxonomiques des especes recensees.
-dbSendQuery(connexion, "DROP TABLE taxo;")
+dbSendQuery(connexion, "DROP TABLE IF EXISTS taxo;")
 creer_taxo<-
   "CREATE TABLE taxo(
 id_taxo    INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -87,15 +87,15 @@ dbListTables(connexion)
 # 3-Generer les dataframes.
 
 result_observations <- dbGetQuery(connexion, "SELECT * FROM observations")
-print(result_observations)
+
 result_site <- dbGetQuery(connexion, "SELECT * FROM site")
-print(result_site)
+
 result_espece <- dbGetQuery(connexion, "SELECT * FROM espece")
-print(result_espece)
+
 result_date_obs <- dbGetQuery(connexion, "SELECT * FROM dob")
-print(result_date_obs)
+
 result_taxo <- dbGetQuery(connexion, "SELECT * FROM taxo")
-print(result_taxo)
+
 
 
 

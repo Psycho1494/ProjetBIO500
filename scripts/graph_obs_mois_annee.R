@@ -19,7 +19,8 @@ lines(datecombine$mois,datecombine$obs_2020,col="orange",lwd = 2)
 #   Creation de la legende.
 
 legend(x = 8 , y = 5000, legend = c("2016", "2017","2018","2019","2020"), 
-       col = c("blue", "red","green","purple","orange"), lwd = 2, 
+       col = c("blue", "red","green","purple","orange"), lwd = 2.1, 
        cex = 0.8, box.lwd = 2, box.col = "white")
 dev.off()
+
 }

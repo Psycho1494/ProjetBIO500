@@ -16,11 +16,10 @@ address:
   - code: a
     address: Université de Sherbrooke, Département de biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, J1K 2R1
 
+lead_author_surname: Chevrette
 
 abstract: |
  Les suivis des dynamiques de population sont essentiels dans un objectif de conservation des espèces d’un territoire, particulièrement à l’ère où les pressions sur les milieux naturels sont fortes et accélèrent l’érosion de la biodiversité. La faune aviaire, qui connait actuellement un déclin marqué à travers le globe, est un groupe particulièrement visé par ce type de suivi. Un programme de suivi initié en 2016 au Québec et s’étalant sur 5 ans a permis de recenser des données de biodiversité d’oiseaux au Québec. Leur analyse a permis de faire ressortir des patrons temporels, spatiaux et taxonomiques. L’abondance et la richesse spécifique s’avèrent plus élevées au mois de juin, avec une majorité d’observations concentrées au sud du 49e parallèle.
-
-
 
 keywords:
   - Aviaire
@@ -48,23 +47,23 @@ Dans le contexte de crise de biodiversité actuel, les données sur la répartit
 
 Un jeu de donnée mesurant la composition et la phénologie acoustiques des oiseaux du Québec a été réalisé à la suite d'un programme de suivi de la biodiversité acoustique exécuté par le Ministère de l'Environnement, de la Lutte contre les Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le cadre du Réseau de suivi de la biodiversité du Québec. Ces données regroupent les observations acoustiques d'oiseaux. Pour chaque observation, les informations suivantes ont été récoltées : la latitude du site, l'heure de début et de fin de l'observation, la date et l'heure de l'observation ainsi que les informations taxonomiques reliées à l'espèce observée. Les données ont été traitées et analysées dans le logiciel RStudio.
 
-```{r echo=FALSE, include=False}
+```{r echo=FALSE, include=FALSE}
 targets::tar_read(graph_mois_annee)
 ```
 
 
-![Nombre d'observations d'oiseaux en fonction du mois entre 2016 et 2020\label{fig:plot1}](../OISEAU/observation_mois_annee.pdf){width="50%" height="40%"}
+![Nombre d'observations d'oiseaux en fonction du mois entre 2016 et 2020\label{fig:plot1}](../figures/observation_mois_annee.pdf){width="50%" height="40%"}
 
-Un premier graphique a été réalisé illustrant le patron temporel des observations d'oiseaux entre 2016 et 2020 (Figure \ref{fig:plot1}) . Celui-ci met en relation le nombre d'observations, en fonction du mois, présentés sous forme de chiffres, et ce, pour les 5 années couvrant les données. On remarque tout d'abord que le plus grand nombre d'observations est réalisé au 6e mois, soit le mois de juin, pour toutes les années représentées. Le nombre d'observation débute à 0 en avril et augmente graduellement jusqu'en juin, pour ensuite redescendre et atteindre 0 à nouveau en septembre. Aucune observation n'a été enregistrée entre les mois de septembre et avril.
+Un premier graphique a été réalisé illustrant le patron temporel des observations d'oiseaux entre 2016 et 2020 (Figure \ref{fig:plot1}) . Celui-ci met en relation le nombre d'observations, en fonction du mois, présentés sous forme de chiffres, et ce, pour les 5 années couvrant les données. On remarque tout d'abord que le plus grand nombre d'observations est réalisé au 6e mois, soit le mois de juin, pour toutes les années représentées. Le nombre d'observation débute à 0 en avril et augmente graduellement jusqu'en juin, pour ensuite redescendre et atteindre 0 à nouveau en septembre. Aucune observation n'a été enregistrée entre les mois de septembre et avril. 
 
 La seconde visualisation représente l'effet de la géographie sur la distribution des observations, obtenue au moyen d'une régression linéaire simple intégrant le nombre d'observations en fonction de la latitude, qui varie entre 45.00642 et 61.31273 (Figure \ref{fig:plot2}). On remarque qu'une très grande majorité des observations ont été réalisées sur des sites situés au sud du 50e parallèle. Très peu d'observations proviennent de la portion nord du territoire québécois.
 
-```{r echo=FALSE, include=False}
+```{r echo=FALSE, include=FALSE}
 targets::tar_read(graph_lat)
 ```
 
 
-![Nombre d'observations d'oiseaux en fonction de la latitude\label{fig:plot2}](../OISEAU/observation_lat.pdf){width="50%" height="40%"}
+![Nombre d'observations d'oiseaux en fonction de la latitude\label{fig:plot2}](../figures/observation_lat.pdf){width="50%" height="40%"}
 
 Pour compléter le portrait de la distribution de la biodiversité, un troisième graphique intégrant les informations taxonomiques des observations a été réalisé(Figure \ref{fig:plot3}). Celui-ci illustre le nombre de familles recensées pour chaque mois ayant fait l'objet du suivi, et ce, pour les 5 années du projet. Pour chacune des années, le nombre de familles semble suivre une distribution normale, avec un maximum atteint chaque année au mois de juin.
 
@@ -73,18 +72,18 @@ Pour compléter le portrait de la distribution de la biodiversité, un troisièm
 #### 3.1 Distribution temporelle et taxonomique
 
 \
-Les patrons de distribution du nombre d'observations au fil des mois témoignent directement du phénomène de migration observé au printemps et à l'automne sur le territoire québécois. Les mouvements migratoires débutent généralement au mois de mars, et augmentent en intensité jusqu'en juin. À ce moment, toutes les espèces d'oiseaux qui passeront l'été au Québec sont arrivées sur le territoire, ce qui correspond au pic d'observations observables sur le premier graphique. Par la suite, vers le mois d'août, c'est la migration automnale qui débute, et graduellement les espèces migratrices quittent le territoire. Les mouvements migratoires expliqueraient donc la variation dans le nombre d'observations, mais serait aussi à l'origine de la distribution du nombre de familles recensées au fil des mois représentée dans le troisième graphique. L'abondance de familles observées qui atteint son apogée en juin serait entre autres expliquées par l'arrivée des passereaux migratoires, un groupe très diversifié, au cours du mois de mai. @desrochers_programme_2017
+Les patrons de distribution du nombre d'observations au fil des mois témoignent directement du phénomène de migration observé au printemps et à l'automne sur le territoire québécois. Les mouvements migratoires débutent généralement au mois de mars, et augmentent en intensité jusqu'en juin. À ce moment, toutes les espèces d'oiseaux qui passeront l'été au Québec sont arrivées sur le territoire, ce qui correspond au pic d'observations observables sur le premier graphique. Par la suite, vers le mois d'août, c'est la migration automnale qui débute, et graduellement les espèces migratrices quittent le territoire. Les mouvements migratoires expliqueraient donc la variation dans le nombre d'observations, mais serait aussi à l'origine de la distribution du nombre de familles recensées au fil des mois représentée dans le troisième graphique. L'abondance de familles observées qui atteint son apogée en juin serait entre autres expliquées par l'arrivée des passereaux migratoires, un groupe très diversifié, au cours du mois de mai @desrochers_programme_2017.
 
-```{r echo=FALSE, include=False}
+```{r echo=FALSE, include=FALSE}
 targets::tar_read(graph_famille)
 ```
 
 
-![Nombre de familles d'oiseaux en fonction du mois entre 2016 et 2020\label{fig:plot3}](../OISEAU/observation_mois_famille.pdf){width="50%" height="35%"}
+![Nombre de familles d'oiseaux en fonction du mois entre 2016 et 2020\label{fig:plot3}](../figures/observation_mois_famille.pdf){width="50%" height="35%"}
 
 #### 3.2 Distribution spatiale 
 
 \
-L'abondance nettement plus marquée du côté des basses-terres du Saint-Laurent pourrait s'expliquer par le fait que cette portion de la province, constituée majoritairement de forêt tempérée, présente plusieurs types de domaines bioclimatiques @tardif_atlas_2005. La grande diversité d'écosystèmes qui s'y trouve, parmi lesquels se trouvent des milieux forestiers, des milieux humides et aquatiques ainsi que des friches et prairies agricoles, offre ainsi un habitat à davantage d'espèces @jobin_latlas_2020. Le nord du Québec est quant à lui dominé par la forêt boréale et caractérisé par un climat plus hostile @tardif_atlas_2005 , qui sont deux éléments pouvant expliquer la plus faible abondance d'oiseaux recensés. Toutefois, il est également possible qu'il y ait un biais provenant de l'effort d'échantillonnage déployé. En effet, si les ressources humaines sont moins accessibles au nord pour réaliser les inventaires, cela se reflète donc sur le nombre d'observations et pourrait mener à une sous-estimation de la biodiversité qui se trouve sur ces sites. Ce biais peut également se refléter dans les données du sud du Québec par une sur-estimation. En effet, si les observateurs sont très nombreux sur un même site, il se pourrait qu'un même oiseau face l'objet de plusieurs observations distinctes dans la base de données.
+L'abondance nettement plus marquée du côté des basses-terres du Saint-Laurent pourrait s'expliquer par le fait que cette portion de la province, constituée majoritairement de forêt tempérée, présente plusieurs types de domaines bioclimatiques @tardif_atlas_2005. La grande diversité d'écosystèmes qui s'y trouve, parmi lesquels se trouvent des milieux forestiers, des milieux humides et aquatiques ainsi que des friches et prairies agricoles, offre ainsi un habitat à davantage d'espèces @jobin_latlas_2020. Le nord du Québec est quant à lui dominé par la forêt boréale et caractérisé par un climat plus hostile @tardif_atlas_2005, qui sont deux éléments pouvant expliquer la plus faible abondance d'oiseaux recensés. Toutefois, il est également possible qu'il y ait un biais provenant de l'effort d'échantillonnage déployé. En effet, si les ressources humaines sont moins accessibles au nord pour réaliser les inventaires, cela se reflète donc sur le nombre d'observations et pourrait mener à une sous-estimation de la biodiversité qui se trouve sur ces sites. Ce biais peut également se refléter dans les données du sud du Québec par une sur-estimation. En effet, si les observateurs sont très nombreux sur un même site, il se pourrait qu'un même oiseau face l'objet de plusieurs observations distinctes dans la base de données.
 
 # Bibliographie {.unnumbered}
