@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.23)  23 APR 2024 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.23)  23 APR 2024 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1220,11 +1220,6 @@ Overfull \hbox (6.75487pt too wide) in paragraph at lines 145--147
 
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.64998pt on input line 147.
-Package mdframed Info: mdframed works in twoside mode on input line 160.
-Package mdframed Info: mdframed inside float 
- mdframed uses option nobreak mdframed on input line 160.
-Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 160.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 5.69998pt on input line 160.
 <../figures/observation_lat.pdf, id=26, 505.89pt x 505.89pt>
@@ -1238,15 +1233,18 @@ Overfull \hbox (6.75487pt too wide) in paragraph at lines 171--173
  [][] 
  []
 
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 189.
+
+Underfull \vbox (badness 5711) has occurred while \output is active []
+
 [1{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/202
 4/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2024/texmf-dist/fonts/enc
 /dvips/base/8r.enc}
 
 
  <../figures/observation_mois_annee.pdf>]
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 189.
-<../figures/observation_mois_famille.pdf, id=52, 505.89pt x 505.89pt>
+<../figures/observation_mois_famille.pdf, id=53, 505.89pt x 505.89pt>
 File: ../figures/observation_mois_famille.pdf Graphic file (type pdf)
 <use ../figures/observation_mois_famille.pdf>
 Package pdftex.def Info: ../figures/observation_mois_famille.pdf  used on input
@@ -1299,13 +1297,13 @@ Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: 37A8D976A1D72868DE528424876D1315;466.
  ) 
 Here is how much of TeX's memory you used:
- 30222 strings out of 474104
- 553331 string characters out of 5747502
+ 30078 strings out of 474104
+ 549291 string characters out of 5747502
  1952496 words of memory out of 5000000
- 51812 multiletter control sequences out of 15000+600000
+ 51668 multiletter control sequences out of 15000+600000
  636520 words of font info for 181 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,14n,121p,1004b,1116s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,14n,121p,1004b,584s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/texlive/2024/
 texmf-dist/fonts/type1/public/lm/lmr5.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/lm/lmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr7.pf
@@ -1314,7 +1312,7 @@ exmf-dist/fonts/type1/public/lm/lmri9.pfb><c:/texlive/2024/texmf-dist/fonts/typ
 e1/public/lm/lmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/
 uhvb8a.pfb><c:/texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/
 texlive/2024/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on rapport.pdf (2 pages, 204883 bytes).
+Output written on rapport.pdf (2 pages, 204585 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
